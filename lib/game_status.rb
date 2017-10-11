@@ -26,13 +26,7 @@ def over?(board)
 end
 
 def winner(board)
-  if won?(board)
-    won?(board).each do |index|
-      if board[index] == "X"
-        return "X"
-      else
-        return "O"
-      end
-    end
+  if winning_combo = won?(board)
+    board[winning_combo.first]
   end
 end
